@@ -61,25 +61,167 @@ footer {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
   text-align: center;
-  background-color: #484849;
-  color: rgb(238, 230, 230);
+  background-color: #c4c4e4;
+  color: rgb(29, 28, 28);
 }
 
 .fa {font-size:50px;}
-.nav-link :hover{
-    border: 3px solid orangered;
-    color: rgb(152, 7, 219);
-    background-color: aliceblue;
+
+a.nav-link{
+    
+    color: rgb(233, 227, 236);
+   
+}
+a.nav-link:hover{
+    
+    color: rgb(23, 23, 24);
+    background-color: rgb(211, 117, 10);
+    text-underline-position: below;
+    border-radius: 5rem;
+}
+
+
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+
+/* Style the buttons */
+.btna {
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.btna:hover {
+  background-color: #ddd;
+}
+
+.btna.active {
+  background-color: #666;
+  color: white;
+}
+
+
+/* ---------------------------------------- */
+
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+
+
+.slid-con {
+  position: relative;
+  width: 50%;
+  max-width: 300px;
+}
+
+.image {
+  display: block;
+  width: 13vw;
+  height: 30vh;
+}
+
+.overlay {
+  position: absolute; 
+  bottom: 0; 
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1; 
+  width: 100%;
+  transition: .5s ease;
+  opacity:0;
+  color: white;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.slid-con:hover .overlay {
+  opacity: 1;
+}
+.company{
+  height: 50vh;
+}
+.com{
+  height: 50vw;
 }
     </style>
 </head>
 <body>
 <section class="container">
     <div class="row">
-        <div class="col-md-6 col-9">
-<h2 style="font-family:sans-serif;">
+        <div class="col-md-6 col-9 my-auto">
+<h1 style="font-family:sans-serif;">
     Altos Technologies
-</h2>     
+</h1>     
    </div>
         <div class="col-md-3 col-9">
             <div class="grid_5" id="social_icons">
@@ -108,19 +250,19 @@ footer {
                     <div class="collapse navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav mx-auto ">
                         <li class="nav-item active">
-                          <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+                          <a class="nav-link text-white" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link text-white" href="#">Gallery <span class="sr-only">(current)</span></a>
+                            <a class="nav-link text-white" href="{% url 'gallery' %}">Gallery <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item active">
-                            <a class="nav-link text-white" href="#">Placement <span class="sr-only">(current)</span></a>
+                            <a class="nav-link text-white" href="{% url 'placement' %}">Placement <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item active">
                             <a class="nav-link text-white" href="{% url 'course' %}">Course <span class="sr-only">(current)</span></a>
                           </li>
                           <li class="nav-item active">
-                            <a class="nav-link text-white" href="#">Contact <span class="sr-only">(current)</span></a>
+                            <a class="nav-link text-white" href="{% url 'contact' %}">Contact <span class="sr-only">(current)</span></a>
                           </li>
                        
                       </ul>
